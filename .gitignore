@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Training outputs
+outputs/
+checkpoints/
+runs/
+wandb/
+*.pth
+*.pt
+*.pkl
+*.bin
+*.ckpt
+
+# Logs
+*.log
+*.out
+nohup.out
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data (large binary formats only)
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Cache
+cache/
+.cache/
+catboost_info/
+temp_optim_*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env
+.env
+.model_env
+venv/
+.venv/
