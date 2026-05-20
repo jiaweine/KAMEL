@@ -3,8 +3,6 @@
 This repository contains the code and datasets for the paper:
 
 > **KAMEL: A Universal KAN-Augmented Multimodal Mixture-of-Experts Framework for Learning Heterogeneous and Imbalanced Tabular Data**  
-> Jiawei Wang\*, Zebang Zhong\*, Runze Cai, Wangkai Ji, Hanwen Ning†  
-> *Information Sciences* (\* Equal contribution, † Corresponding author)
 
 ## Overview
 
