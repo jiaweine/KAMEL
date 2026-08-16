@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">KAMEL architecture overview</title>
+  <desc id="desc">Conceptual overview of KAMEL: same-source modality transformation, unified KAN-augmented encoding, heterogeneous mixture-of-experts fusion, and dynamic curriculum imbalance mitigation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="55%" stop-color="#0b1730"/>
+      <stop offset="100%" stop-color="#101827"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6ee7f9"/>
+      <stop offset="50%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="dcim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7890b8"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="760" rx="28" fill="url(#bg)"/>
+  <circle cx="1420" cy="90" r="220" fill="#7c3aed" opacity="0.07"/>
+  <circle cx="160" cy="700" r="260" fill="#06b6d4" opacity="0.055"/>
+
+  <text x="800" y="72" text-anchor="middle" fill="url(#hero)" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="800" font-size="42" letter-spacing="2">KAMEL</text>
+  <text x="800" y="110" text-anchor="middle" fill="#dce7f7" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600" font-size="20">KAN-Augmented Multimodal Expert Learning</text>
+  <text x="800" y="140" text-anchor="middle" fill="#8396b5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">A unified framework for heterogeneous and imbalanced tabular classification</text>
+
+  <!-- Input -->
+  <g filter="url(#shadow)">
+    <rect x="72" y="235" width="210" height="242" rx="24" fill="#101f35" stroke="#294467" stroke-width="1.5"/>
+  </g>
+  <text x="177" y="273" text-anchor="middle" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700" font-size="18">Tabular record</text>
+  <rect x="105" y="302" width="144" height="118" rx="14" fill="#0a1628" stroke="#334d70"/>
+  <g fill="#87a5c9">
+    <rect x="126" y="326" width="38" height="12" rx="4"/><rect x="174" y="326" width="54" height="12" rx="4"/>
+    <rect x="126" y="351" width="55" height="12" rx="4"/><rect x="191" y="351" width="37" height="12" rx="4"/>
+    <rect x="126" y="376" width="29" height="12" rx="4"/><rect x="165" y="376" width="63" height="12" rx="4"/>
+  </g>
+  <text x="177" y="448" text-anchor="middle" fill="#8ea3c1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">one sample · one source</text>
+
+  <!-- SSMT -->
+  <g filter="url(#shadow)">
+    <rect x="346" y="195" width="330" height="322" rx="26" fill="#10263a" stroke="#227c91" stroke-width="1.5"/>
+  </g>
+  <text x="511" y="236" text-anchor="middle" fill="#67e8f9" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="800" font-size="20">SSMT</text>
+  <text x="511" y="262" text-anchor="middle" fill="#cde9ef" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600" font-size="14">Same-Source Modality Transformation</text>
+  <rect x="376" y="298" width="270" height="56" rx="14" fill="#0b1d2d" stroke="#28556b"/>
+  <circle cx="408" cy="326" r="10" fill="#38bdf8"/><text x="433" y="332" fill="#d9edf5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Tabular view</text>
+  <rect x="376" y="369" width="270" height="56" rx="14" fill="#0b1d2d" stroke="#28556b"/>
+  <circle cx="408" cy="397" r="10" fill="#a78bfa"/><text x="433" y="403" fill="#d9edf5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Visual view · IGTD</text>
+  <rect x="376" y="440" width="270" height="56" rx="14" fill="#0b1d2d" stroke="#28556b"/>
+  <circle cx="408" cy="468" r="10" fill="#fb7185"/><text x="433" y="474" fill="#d9edf5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Textual view · serialization</text>
+
+  <!-- UKAE -->
+  <g filter="url(#shadow)">
+    <rect x="742" y="195" width="300" height="322" rx="26" fill="#181d3b" stroke="#5b55a4" stroke-width="1.5"/>
+  </g>
+  <text x="892" y="236" text-anchor="middle" fill="#c4b5fd" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="800" font-size="20">UKAE</text>
+  <text x="892" y="262" text-anchor="middle" fill="#e5ddff" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600" font-size="14">Unified KAN-Augmented Encoder</text>
+  <rect x="774" y="299" width="236" height="76" rx="16" fill="#11162f" stroke="#4d4b83"/>
+  <text x="892" y="330" text-anchor="middle" fill="#f3f0ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700" font-size="16">RKAN encoding</text>
+  <text x="892" y="355" text-anchor="middle" fill="#aeb0d8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">SiLU global path + localized RBF path</text>
+  <rect x="774" y="392" width="236" height="82" rx="16" fill="#11162f" stroke="#4d4b83"/>
+  <text x="892" y="424" text-anchor="middle" fill="#f3f0ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700" font-size="16">Shared latent space</text>
+  <text x="892" y="450" text-anchor="middle" fill="#aeb0d8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">cross-view nonlinear alignment</text>
+
+  <!-- HMoEF -->
+  <g filter="url(#shadow)">
+    <rect x="1108" y="195" width="330" height="322" rx="26" fill="#2a1a2a" stroke="#9b4b78" stroke-width="1.5"/>
+  </g>
+  <text x="1273" y="236" text-anchor="middle" fill="#f9a8d4" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="800" font-size="20">HMoEF</text>
+  <text x="1273" y="262" text-anchor="middle" fill="#f9dbea" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="600" font-size="14">Heterogeneous Mixture-of-Experts Fusion</text>
+  <rect x="1140" y="299" width="128" height="73" rx="15" fill="#1d1220" stroke="#70405f"/>
+  <text x="1204" y="326" text-anchor="middle" fill="#ffd6e8" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700" font-size="14">Expert groups</text>
+  <text x="1204" y="349" text-anchor="middle" fill="#b990a8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">diverse structure</text>
+  <rect x="1281" y="299" width="125" height="73" rx="15" fill="#1d1220" stroke="#70405f"/>
+  <text x="1343" y="326" text-anchor="middle" fill="#ffd6e8" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700" font-size="14">Soft gate</text>
+  <text x="1343" y="349" text-anchor="middle" fill="#b990a8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">sample-adaptive</text>
+  <rect x="1140" y="389" width="266" height="82" rx="16" fill="#1d1220" stroke="#70405f"/>
+  <text x="1273" y="421" text-anchor="middle" fill="#ffd6e8" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700" font-size="15">Sparse top-k routing</text>
+  <text x="1273" y="447" text-anchor="middle" fill="#b990a8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">specialization across heterogeneous samples</text>
+
+  <!-- Prediction -->
+  <g filter="url(#shadow)">
+    <rect x="1480" y="285" width="82" height="144" rx="22" fill="#13251f" stroke="#388563" stroke-width="1.5"/>
+  </g>
+  <circle cx="1521" cy="329" r="17" fill="#34d399" opacity="0.9"/>
+  <path d="M1513 329 l6 6 l11 -14" fill="none" stroke="#06251a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1521" y="374" text-anchor="middle" fill="#d8ffec" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="700" font-size="13">Class</text>
+  <text x="1521" y="394" text-anchor="middle" fill="#8bc3a8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11">prediction</text>
+
+  <!-- Arrows -->
+  <path d="M282 356 C307 356 318 356 340 356" fill="none" stroke="#7890b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M676 356 C700 356 714 356 736 356" fill="none" stroke="#7890b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1042 356 C1066 356 1080 356 1102 356" fill="none" stroke="#7890b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1438 356 C1453 356 1461 356 1474 356" fill="none" stroke="#7890b8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- DCIM -->
+  <g filter="url(#shadow)">
+    <rect x="346" y="575" width="1092" height="108" rx="24" fill="url(#dcim)" opacity="0.92"/>
+  </g>
+  <text x="392" y="611" fill="#ecfeff" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="800" font-size="19">DCIM · Dynamic Curriculum Imbalance Mitigation</text>
+  <text x="392" y="640" fill="#d8f3ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Representation-oriented learning: adaptive / balanced sampling prevents majority-class dominance</text>
+  <text x="392" y="665" fill="#d8f3ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Classification-focused refinement: curriculum calibration progressively improves sensitivity to tail classes</text>
+
+  <text x="800" y="724" text-anchor="middle" fill="#667a99" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">Conceptual diagram redrawn for this repository from the terminology and mechanism described in the KAMEL paper.</text>
+</svg>
